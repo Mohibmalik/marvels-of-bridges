@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Sign Up</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        }
+        form{
+            position: relative;
+            width: 350px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        }
+        h1{
+            text-align: center;
+            color: #fff;
+        }
+        input, button[type="submit"]{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box; /* Added */
+        }
+        button[type="submit"]{
+            background: #5700f9;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+        button[type="submit"]:hover{
+            background: #6d44b8;
+        }
+        #togglePassword {
+            position: absolute;
+            right: 35px;
+            top: 243px; /* Adjust based on the actual position of your password field */
+            cursor: pointer;
+        }
+     
+    </style>
+</head>
+<body>
+    <form action="Signin.html" onsubmit="return validation()">
+        <h1 style="color: #0f0c29;">Sign Up</h1>
+        <input type="text" placeholder="User Name" id="user"> <br>
+        <span id="usererror" style="color: red;"></span> <br>
+
+        <input type="email" placeholder="Entre your email" id="email"> <br>
+        <span id="emailerror" style="color: red;"></span> <br>
+
+        <input type="password" placeholder="Password" id="pwd" style="padding-right: 30px;"> <!-- Adjusted padding -->
+        <span id="pwderror" style="color: red;"></span> <br>
+
+        <input type="password" placeholder="Confirm Password" id="cpwd"> <br>
+        <span id="cperror" style="color: red;"></span> <br>
+
+        <input type="text" placeholder="Mobile Number" id="mobile"> <br>
+        <span id="mobileerror" style="color: red;"></span> <br>
+        
+                <button type="button" id="togglePassword" style="background: none; border: none; margin-top:1.75rem; display:fixed;">
+                    <i class="fas fa-eye" id="eyeIcon"></i>
+                </button>
+
+        <input type="submit" style="background-color: black;color:white;" value="Sign Up">
+    </form>
+
+    <script>
+        function validation() {
+            var u = document.getElementById("user").value;
+            var e = document.getElementById("email").value;
+            var p = document.getElementById("pwd").value;
+            var cp = document.getElementById("cpwd").value;
+            var m = document.getElementById("mobile").value;
+        
+            var usercheck = /^[a-zA-Z. ]{3,30}$/;
+            var emailcheck = /^[a-zA-Z_]+@[a-zA-Z_]+.[a-zA-Z]{2,5}$/;
+            var mobilecheck = /^[0-9]{10,15}$/;
+            var passcheck = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+        
+            let isValid = true;
+        
+            if (!usercheck.test(u)) {
+                document.getElementById("usererror").innerHTML = " **Invalid User Name** ";
+                isValid = false;
+            }
+            if (!emailcheck.test(e)) {
+                document.getElementById("emailerror").innerHTML = " **Invalid Email** ";
+                isValid = false;
+            }
+            if (!passcheck.test(p)) {
+                document.getElementById("pwderror").innerHTML = " **Password must contain at least one uppercase, one digit, one special character and be at least 8 characters long** ";
+                isValid = false;
+            }
+            if (cp !== p) {
+                document.getElementById("cperror").innerHTML = "**Passwords must match**";
+                isValid = false;
+            }
+            if (!mobilecheck.test(m)) {
+                document.getElementById("mobileerror").innerHTML = " **Invalid Mobile Number** ";
+                isValid = false;
+            }
+        
+            // Correct placement for setting items in localStorage
+            if(isValid) { // Only store the data if all validations passed
+                localStorage.setItem("Email", e);
+                localStorage.setItem("Password", p); // Consider security implications
+                localStorage.setItem("UserName", u);
+            }
+        
+            return isValid;
+        }
+        
+    </script>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#pwd');
+        const eyeIcon = document.querySelector('#eyeIcon');
+
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            eyeIcon.classList.toggle('fa-eye-slash');
+        });
+    </script>
+
+</body>
+</html>

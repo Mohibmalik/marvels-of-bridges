@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <link rel="stylesheet" href="css files/style.css">
+    <style>
+      .lead a
+              {
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+                font-weight: 500;
+              }
+
+              .container
+              {
+                  border: 2px solid #000000;
+                  box-shadow: 0 0 9px;
+              }
+              .form-control
+              {
+                  border-color: black;
+                  background-color: rgb(255, 255, 255);
+              }
+              .btn
+              {
+                  background-color: rgb(0, 0, 0);
+                  color:rgb(255, 242, 242);
+              }
+              .btn:hover
+              {
+                  background-color: rgb(255, 0, 0);
+                  color: black;
+              }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl" id="nav" style="background: rgb(0, 0, 0);">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="Assets/my logo.png " alt="Amazing Bridges Logo" width="55%" height="60%"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex justify-content-end">
+              <div id="logo-container" class="text-light">
+                <span id="visitor-count" class="px-2">0</span>
+                <span id="visic">visitor count</span>
+              </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"> 
+                  <a class="nav-link px-3" href="index.html"style="color: rgb(184, 184, 184);">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" aria-expanded="false"style="color: rgb(184, 184, 184);">
+                    Bridges
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(0, 0, 0);">
+                    <li><a class="dropdown-item" href="index.html" style="color: rgb(184, 184, 184);">Longest</a></li>
+                    <li><a class="dropdown-item" href="index.html" style="color: rgb(184, 184, 184);">Tallest</a></li>
+                    <li><a class="dropdown-item" href="index.html" style="color: rgb(184, 184, 184);">Smallest</a></li>
+                    <li><a class="dropdown-item" href="index.html" style="color: rgb(184, 184, 184);">Oldest</a></li>
+                  </ul> 
+                </li>
+                <li class="nav-item">
+                  <a class='nav-link' href='gallery.html'style="color: rgb(184, 184, 184);">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class='nav-link' href='aboutus.html'style="color: rgb(184, 184, 184);">About</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class='nav-link px-3' href='contactus.html'style="color: rgb(184, 184, 184);">Contact</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class='nav-link' href='#'>Book</a>
+                </li>
+                <li class="nav-item">
+                  <a class='nav-link' href='feedback.html'style="color: rgb(184, 184, 184);">Feedback</a>
+                </li>
+                <li class="nav-item">
+                  <a class='nav-link px-3' href='faq.html'style="color: rgb(184, 184, 184);">FAQ'S</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav> 
+      </header>
+
+      <div id="carouselExample" class="carousel slide " style="margin-top: 0.17rem;" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="Assets/ship.jpg" class="d-block w-100 bi" data-bs-interval="1" alt="gaint train bridge kasmir Pakistan" style="height: auto; max-height: 450px;">
+              <div class="carousel-caption d-none d-md-block">  
+              </div>
+            </div>
+              <div class="carousel-item">
+              <img src="Assets/plane.jpg" class="d-block w-100 bi"  data-bs-interval="1" alt="city-urban-bridge-milla" style="height: auto;max-height: 450px;">
+            </div>
+
+            <div class="carousel-item">
+            <img src="Assets/train.jpg" class="d-block w-100 bi"  data-bs-interval="1" alt="chapel birdge switzerland" style="height:auto;max-height: 450px;">
+            </div>
+
+            <div class="carousel-item">
+            <img src="Assets/bus.jpg" class="d-block w-100 bi"  data-bs-interval="1" alt="tower bridge london" style="height:auto;max-height: 450px;">
+            </div>
+
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+              
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+        </div>
+        <p style="color:white">Welcome:  
+          <script>
+       var check = localStorage.getItem("code");
+          if(check == "secret") 
+          {
+              
+          }
+          else
+          {
+              window.location.href = "Signin.html";
+          }
+              document.write(localStorage.getItem("UserName")) ;
+          </script>
+      </p>
+
+      <br><br><br>
+<style>
+  .form-label{color: black;}
+</style>
+      <div class="container mb-3" id="book">    
+        <h1 class="h1 text-center">Book A Ticket</h1>
+            <h6 class="h1 text-center mb-5">Please Fill Following Details</h6>
+            <hr> 
+  <form action="book me.html" onsubmit="return Book()">
+        <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label">Name: <span class="text-danger" id="nerror">*</span></label>
+            <input type="text" class="form-control" id="name">
+         </div>
+         <div class="col-md-6">
+            <label class="form-label">Select Route: <span class="text-danger" id="moerorr">*</span></label>
+            <select id="mode" class="form-control">
+                <option> Select One Of This</option>
+                <option>By Aeroplane</option>
+                <option>By Train</option>
+                <option>By Ship</option>
+                <option>By Bus</option>
+            </select>
+        </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">No. of Persons: <span class="text-danger" id="select1error">*</span></label>
+                <select id="persons" class="form-control">
+                    <option>Select One Of This</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+            <label class="form-label">Phone Number: <span class="text-danger" id="perror">*</span></label>
+            <input type="tel" class="form-control" id="phone">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Email: <span class="text-danger" id="eerror">*</span></label>
+               <input type="email" class="form-control" id="email">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Address: <span class="text-danger" id="aaerror">*</span></label>
+               <input type="text" class="form-control" id="address">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Date Of Arrival: <span class="text-danger ">*</span></label>
+               <input type="date" class="form-control" id="arrival">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Date Of Departure: <span class="text-danger ">*</span></label>
+               <input type="date" class="form-control" id="departure">
+               <span id="dateerror" class="text-danger"></span>
+            </div>
+        </div>
+    
+     <div class="row text-center my-5">
+       <div class="col-md-12">
+        <button type="submit" class="btn ">Submit</button>
+       </div>
+     </div>
+    </form>
+    </div>
+<br>
+      <!-- footer -->
+      <footer>
+        <div class="row">
+          <div class="col">
+              <a href="#"><img src="Assets/my logo.png" width="40%" height="40%" class="logo"></a>
+              <p>
+                  bridge, Structure that spans horizontally to allow pedestrians and vehicles to cross a void. The simplest bridge is the beam (or girder) bridge, consisting of straight, rigid beams of wood, steel, or concrete placed across a span.
+              </p>
+          </div>
+          <div class="col">
+              <h3>Location <div class="underline"><span></span></div></h3>
+              <p> Marvels Of Bridges</p>
+              <p>Metro Star Gate</p>
+              <p>Karachi Pakistan</p>
+              <p class="email-id"> incrediblebridges@gmail.com</p>
+              <h4>+923322923689</h4>
+          </div>
+          <div class="col">
+              <h3>Site Map<div class="underline"><span></span></div></h3>
+              <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house-user">&nbsp; &nbsp;</i>Home</a></li>
+                <li><a href='aboutus.html'><i class="fa-solid fa-address-card">&nbsp; &nbsp;</i>About-us</a></li>
+                <li><a href='contactus.html'><i class="fa-solid fa-phone">&nbsp; &nbsp;</i>Contact-us</a></li>
+                <li><a href='book me.html'><i class="fa-solid fa-plane">&nbsp; &nbsp;</i>Book-me</a></li>
+                <li><a href='feedback.html'><i class="fa-solid fa-comment">&nbsp; &nbsp;</i>Feedback</a></li>
+                <li><a href='gallery.html'> <i class="fa-solid fa-images">&nbsp; &nbsp;</i> Gallery</a></li>
+               <li> <a href='#'> <i class="fa-solid fa-question">&nbsp; &nbsp;</i> FAQ's</a></li>
+  
+              </ul>
+          </div>
+          <div class="col"> 
+              <h3>Social Media<div class="underline"><span></span></div> </h4>
+  
+        
+              <div class="social-icon" style="margin-left:25px;">
+                 <a href="https://www.facebook.com" target="_blank"><i  class="fa-brands fa-facebook"></i></a> 
+                 <a href="https://www.facebook.com" target="_blank"><i  class="fa-brands fa-instagram"></i></a> <br>
+                 <a href="https://www.facebook.com" target="_blank"><i  class="fa-brands fa-youtube"></i></a> 
+                 <a href="https://twitter.com/i/flow/login"target="_blank"><i class="fa-brands fa-twitter"></i></a><br>
+                  <a href="https://www.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.pinterest.com/search/pins/?q=bridges&rs=typed" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+              </div>
+          </div>
+        </div>
+        <hr>
+        <p class="copyright"> Incredible Bridges 2024 All Right Reserved</p>
+      </footer>
+  
+      <script src="js files/data.js"></script>
+  </body>
+</html>

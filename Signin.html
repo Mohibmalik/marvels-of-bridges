@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        }
+        form{
+            position: relative;
+            width: 350px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        }
+        h1{
+            text-align: center;
+            color: #24243e;
+        }
+        input, button[type="submit"]{
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        button[type="submit"]{
+            background: #000000;
+            color: white;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover{
+            background: #ff0000;
+        }
+        #togglePassword {
+            position: absolute;
+            right: 35px;
+            top: 178px; /* Adjust based on the actual position of your password field */
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #573b8a;
+        }
+        #signup{
+            width: calc(20% - 10px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        #signup{
+            background: #000000;
+            color: white;
+            cursor: pointer;
+        }
+        #signup:hover{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return signin()">
+        <h1>LogIn</h1>
+        <input type="email" placeholder="Email" id="email" required> <br>
+        <input type="password" placeholder="Password" id="pwd" required> <br>
+        <button type="button" id="togglePassword">
+            <i class="fas fa-eye" style="margin-left: -2rem;"></i>
+        </button>
+        <button type="submit">logIn</button> <br>
+        <span id="login" style="color: red;"></span>
+        <p>Create new account</p>
+        <a href="../html files/signup.html?openModal=true">
+            <button type="button" id="signup">signup</button>
+        </a>
+    </form>
+
+    <script>
+        function signin() {
+            var e = document.getElementById("email").value;
+            var p = document.getElementById("pwd").value;
+    
+            var emailcheck = localStorage.getItem("Email");
+            var pwdcheck = localStorage.getItem("Password");
+    
+            if(e === emailcheck && p === pwdcheck) {
+                localStorage.setItem("code", "secret");
+                window.location.href = "book me.html";
+                return false; // Prevent form from submitting
+            } else {
+                document.getElementById("login").innerHTML = "Invalid Email or Password";
+                return false; // Prevent form from submitting
+            }
+        }
+        
+        // Toggle password visibility
+        document.getElementById("togglePassword").addEventListener("click", function() {
+            const pwd = document.getElementById("pwd");
+            const type = pwd.getAttribute("type") === "password" ? "text" : "password";
+            pwd.setAttribute("type", type);
+            // Toggle the icon
+            this.firstChild.classList.toggle("fa-eye-slash");
+        });
+    </script>
+</body>
+</html>
